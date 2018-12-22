@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewprot" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>dddd</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body>
+    <svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+  <line class="one" stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="260.5" x2="75.5" y1="60.5" x1="87.5" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line class="two" stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="209.5" x2="273.5" y1="261.5" x1="76.5" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line class="three" stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="66.5" x2="222.5" y1="215.5" x1="256.5" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line class="four" stroke-linecap="null" stroke-linejoin="null" id="svg_7" y2="62.5" x2="426.5" y1="101.5" x1="230.5" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line class="five" stroke-linecap="null" stroke-linejoin="null" id="svg_8" y2="311.5" x2="462.5" y1="74.5" x1="384.5" stroke-opacity="null" stroke="#000" fill="none"/>
+  <line class="six" stroke-linecap="null" stroke-linejoin="null" id="svg_9" y2="301.5" x2="187.5" y1="267.5" x1="443.5" stroke-opacity="null" stroke="#000" fill="none"/>
+ 
+    </svg>
+    <script type="text/javascript">
+      function animatePath(pathname, animation) {
+        var path = document.querySelector(pathname);
+        var length = path.getTotalLength();
+        // Clear any previous transition
+        path.style.transition = path.style.WebkitTransition =
+          'none';
+        // Set up the starting positions
+        path.style.strokeDasharray = length + ' ' + length;
+        path.style.strokeDashoffset = length;
+        // Trigger a layout so styles are calculated & the browser
+        // picks up the starting position before animating
+        path.getBoundingClientRect();
+        // Define our transition
+        path.style.transition = path.style.WebkitTransition =
+          animation;
+        // Go!
+        path.style.strokeDashoffset = '0';
+      }
+
+      animatePath('.one', 'stroke-dashoffset 2s 1s ease-in-out');
+      animatePath('.two', 'stroke-dashoffset 2s 1s ease-in-out');
+      animatePath('.three', 'stroke-dashoffset 2s 1s ease-in-out');
+      animatePath('.four', 'stroke-dashoffset 2s 1s ease-in-out');
+      animatePath('.five', 'stroke-dashoffset 2s 1s ease-in-out');
+      animatePath('.six', 'stroke-dashoffset 2s 1s ease-in-out');
+    </script>
+  </body>
+
+</html>
